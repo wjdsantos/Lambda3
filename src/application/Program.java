@@ -11,7 +11,7 @@ public class Program {
 
 	public static void main(String[] args) {
 
-			//Implementação da interface
+			//Reference method com método estático
 		Locale.setDefault(Locale.US);
 		
 		List<Product> list = new ArrayList<>();
@@ -21,8 +21,8 @@ public class Program {
 		list.add(new Product("Tablet", 350.50));
 		list.add(new Product("HD Case", 80.90));
 
-		list.forEach(new PriceUpdate());  //Implementação de Consumer em uma classe interface com uma função que 
-		                                  //acrescenta 10% nos valores da lista
+		list.forEach(Product::staticPriceUpdate);  //Implementação de Consumer em uma classe interface com um metodo 
+		                                  // statico que acrescenta 10% nos valores da lista
 		
 		list.forEach(System.out::println); //Usando um referente method para o println
 	}
